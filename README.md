@@ -55,5 +55,6 @@ pytest -q
 
 See [deployment instructions](docs/DEPLOYMENT.md), [threat model](docs/THREAT_MODEL.md), and [local verification](verification/local-verification.md).
 
-The included raw-GitHub records are deterministic demo fixtures. A real publisher registration must use that publisher's official authority or authenticated API; a repository controlled by the submitter is not authoritative production evidence.
+Studionet deployment: [`0x8A7eb525354F80b3dF867BEb5b632f50Fd0aAfef`](https://explorer-studio.genlayer.com/address/0x8A7eb525354F80b3dF867BEb5b632f50Fd0aAfef). Source parity, happy paths, and failure paths are recorded in [Studionet verification](verification/studionet-verification.md).
 
+The included raw-GitHub records are deterministic demo fixtures. A real publisher registration must use that publisher's official authority or authenticated API; a repository controlled by the submitter is not authoritative production evidence.
