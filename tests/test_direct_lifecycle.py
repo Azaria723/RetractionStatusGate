@@ -2,7 +2,8 @@ import hashlib
 import json
 
 HOST = "raw.githubusercontent.com"
-PATH = "/Azaria723/RetractionStatusGate/COMMIT/evidence/"
+EVIDENCE_COMMIT = "910d9ac3efa766593b7f824996c10ff7f0ba551b"
+PATH = "/Azaria723/RetractionStatusGate/" + EVIDENCE_COMMIT + "/evidence/"
 ACTIVE = b'{"doi":"10.5555/active-001","publisher_key":"DEMO-PUBLISHER","title":"A reproducible active article","notice":"A correction fixed a table label. The article remains active and has not been retracted."}\n'
 RETRACTED = b'{"doi":"10.5555/retracted-002","publisher_key":"DEMO-PUBLISHER","title":"A withdrawn result","notice":"This article was officially retracted by the publisher because its central dataset could not be validated."}\n'
 CONCERN = b'{"doi":"10.5555/concern-003","publisher_key":"DEMO-PUBLISHER","title":"A result under review","notice":"The publisher issued an expression of concern while the underlying images are investigated. The article has not been retracted."}\n'
@@ -22,7 +23,7 @@ def request(direct_vm, contract, requester, doi):
         assert contract.request_status_check(doi) == 0
 
 def mock_record(direct_vm, suffix, body, status=200):
-    direct_vm.mock_web(r"https://raw\.githubusercontent\.com/Azaria723/RetractionStatusGate/COMMIT/evidence/" + suffix + r"\.json$", {"status": status, "body": body})
+    direct_vm.mock_web(r"https://raw\.githubusercontent\.com/Azaria723/RetractionStatusGate/910d9ac3efa766593b7f824996c10ff7f0ba551b/evidence/" + suffix + r"\.json$", {"status": status, "body": body})
 
 def result(contract):
     return json.loads(contract.get_check(0))

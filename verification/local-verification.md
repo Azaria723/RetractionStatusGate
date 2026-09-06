@@ -11,8 +11,17 @@ The suite covers all three principal semantic statuses, live validator digest ca
 Result on 2026-09-06: `17 passed`.
 
 - Contract SHA-256: `3e143546d6c66ae6102aa2e47f1e7e24a0dc2dfeb6f674f1666a4a84a51c0bc0`
+- Immutable evidence commit: `910d9ac3efa766593b7f824996c10ff7f0ba551b`
 - `active-001.json`: `71ac69e7891c53195d0740aeade7cc086a499566b1f225343c631c8701737050`
 - `retracted-002.json`: `42361f9b501742d1a360bfac540915c4c3eebcfc9c3d92bcf50bca9e8b30677f`
 - `concern-003.json`: `6aff3b789e7d9573529b8b2559b7f730063d573779b4832ee5aa9bebe65a49be`
+
+Remote verification at the immutable commit returned:
+
+- `active-001.json`: HTTP `200`, `203` bytes
+- `retracted-002.json`: HTTP `200`, `213` bytes
+- `concern-003.json`: HTTP `200`, `235` bytes
+
+Each remote SHA-256 matched its independently calculated local value above.
 
 On-chain transaction evidence and deployed source parity must be added after a new instance is deployed.

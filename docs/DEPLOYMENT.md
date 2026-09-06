@@ -3,10 +3,9 @@
 ## Before deployment
 
 1. Run `pytest -q` and retain the complete result.
-2. Publish the demo evidence files to the final GitHub repository.
-3. Replace the `COMMIT` placeholder used by tests and examples with an immutable 40-character commit SHA.
-4. Re-run tests and verify every raw record returns HTTP 200.
-5. Calculate each fixture digest independently for evidence documentation.
+2. The demo evidence files are published at immutable commit `910d9ac3efa766593b7f824996c10ff7f0ba551b`.
+3. Re-run tests and verify every raw record returns HTTP 200.
+4. Calculate each fixture digest independently for evidence documentation.
 
 ## Deploy
 
@@ -20,7 +19,7 @@ Using the deployer wallet, call:
 publisher_key: DEMO-PUBLISHER
 doi_prefix: 10.5555
 authority_host: raw.githubusercontent.com
-record_path_prefix: /Azaria723/RetractionStatusGate/<IMMUTABLE_COMMIT>/evidence/
+record_path_prefix: /Azaria723/RetractionStatusGate/910d9ac3efa766593b7f824996c10ff7f0ba551b/evidence/
 ```
 
 Expected publisher ID: `0`.
@@ -43,4 +42,3 @@ For every case, retain both the request and assessment transactions, then call `
 - `record_sha256` equals an independently calculated digest of the served raw bytes.
 
 Do not claim success from transaction finalization alone. A finalized method can return a fail-closed error value without producing the intended state.
-
